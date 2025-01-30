@@ -9,11 +9,13 @@ This project implements a comprehensive suite of financial models for interest r
 
 ### The application includes:
 
-✅ Advanced Interest Rate Models (Vasicek, CIR, Hull-White, HJM)
+✅ Interest Rate Models (Vasicek, CIR, Hull-White, HJM)
+
+✅ Advanced Interest Rate Models (Jump-Diffusion, Bayesian, Gaussian+, Autoregressive Functional Exogenous, Pointwise Autoregressive Functional Exogenous, Monte Carlo, Markov Chain)
 
 ✅ Bond Pricing (Discounted Cash Flow, Binomial Trees, Option-Embedded Bonds)
 
-✅ Risk Metrics (Duration, Convexity, Option-Adjusted Spread, Sensitivity Analysis)
+✅ Risk Metrics (Duration, Convexity, Sensitivity Analysis, Option-Adjusted Spread, Binomial Tree)
 
 ✅ Backtesting & Performance Evaluation (ADF, Cointegration, ANOVA, AIC/BIC)
 
