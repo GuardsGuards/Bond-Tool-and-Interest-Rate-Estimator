@@ -102,11 +102,12 @@ ANOVA Table – Compares multiple models based on RSS (Residual Sum of Squares),
 
 Objective: Enable real-time interest rate modeling, bond pricing, and risk assessment via a Flask-powered web application.
 
-###📌 Features
+### 📌 Features
 
 ✅ Interactive Model Selection – Users can choose interest rate models and compare outputs dynamically.
 
 ✅ Scenario Testing – Allows users to simulate different rate environments and observe bond price impacts.
 
 ✅ Dynamic Visualization – Plots actual vs. predicted interest rates, Monte Carlo simulations, and binomial tree outcomes.
+
 ✅ JSON API Responses – Outputs structured financial risk metrics for integration with other tools.
