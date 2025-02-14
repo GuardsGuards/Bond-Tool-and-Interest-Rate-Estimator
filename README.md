@@ -1,8 +1,4 @@
-Below is a concise, single README that combines all the provided information without redundancies:
-
----
-
-# 📌 Capital Markets & Risk: Interest Rate Modeling & Pricing Project
+# 📌 Capital Markets & Risk
 
 A **Python & Flask**-based application for advanced interest rate modeling, bond pricing, risk analytics, and financial backtesting. The toolkit integrates cutting-edge models and real-world data to help risk analysts, portfolio managers, and researchers make informed financial decisions.
 
@@ -100,8 +96,4 @@ This project offers a comprehensive framework that blends:
 ## 📝 Conclusion
 
 This project delivers a robust framework for **interest rate modeling** and **bond pricing**, blending theoretical models with practical data analysis. Whether for risk management, portfolio optimization, or academic research, this toolkit provides the advanced tools necessary for navigating today’s dynamic financial markets.
-
----
-
-🌟 **Happy Modeling!** 🌟
 
