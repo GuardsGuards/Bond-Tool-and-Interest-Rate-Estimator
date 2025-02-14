@@ -1,108 +1,107 @@
-# 📌 Capital Markets & Risk: Interest Rate Modeling & Pricing Project
-
-## A Python & Flask-based application for advanced interest rate modeling, bond pricing, risk analytics, and financial backtesting.
+Below is a concise, single README that combines all the provided information without redundancies:
 
 ---
 
-### 📖 Project Overview
+# 📌 Capital Markets & Risk: Interest Rate Modeling & Pricing Project
 
-This project is designed to provide a comprehensive toolkit for **interest rate modeling** and **bond pricing**, incorporating advanced financial models and real-world data. The project combines **jump diffusion**, **exogenous factors** (such as inflation and money velocity), and **refinements to traditional models** like the **CIR (Cox-Ingersoll-Ross)** and **Hull-White models** to deliver a more accurate and robust framework for financial analysis.
+A **Python & Flask**-based application for advanced interest rate modeling, bond pricing, risk analytics, and financial backtesting. The toolkit integrates cutting-edge models and real-world data to help risk analysts, portfolio managers, and researchers make informed financial decisions.
+
+---
+
+## 📖 Project Overview
+
+This project offers a comprehensive framework that blends:
+
+- **Advanced Interest Rate Modeling:**  
+  Combines **jump diffusion** (modeling sudden rate changes), **exogenous factors** (e.g., inflation and money velocity), and a **CIR + Hull-White hybrid model** (ensuring non-negative, mean-reverting rates with time-dependent drift).
+
+- **Bond Pricing & Analytics:**  
+  Provides tools for computing bond prices, total/annualized returns, duration, convexity, and even pricing using a binomial tree (supporting callable/putable bonds).
+
+- **Credit–FX Jump Model Simulation:**  
+  Implements risk–neutral pricing of a zero–coupon bond subject to default risk and an FX jump. It computes both theoretical and Monte Carlo prices for bonds denominated in EUR (converted to USD) and USD, and estimates the FX sensitivity (delta) of the EUR bond price.
+
+- **Visualization & Reporting:**  
+  Interactive plots, heatmaps, and summary tables (using Matplotlib and Seaborn) illustrate historical and projected interest rates, bond risk metrics, and pricing analytics.
 
 ---
 
 ## 🛠️ Key Features
 
-### 1. **Interest Rate Modeling**
-   - **Jump Diffusion**: Incorporates sudden jumps in interest rates, modeled using parameters λ (jump intensity), μ_J (mean jump size), and σ_J (jump volatility).
-   - **Exogenous Factors**: Integrates external drivers like **inflation** and **money velocity (M2V)** to refine the interest rate projections.
-   - **CIR + Hull-White Hybrid Model**: Combines the strengths of the **CIR model** (for non-negative rates) and the **Hull-White model** (for mean-reversion and time-dependent drift) to create a more realistic interest rate simulation.
-   - **Time-Dependent Drift**: Captures trends in interest rates using a time-dependent drift term calibrated from historical data.
+1. **Interest Rate Modeling**
+   - **Jump Diffusion:** Models sudden rate jumps with parameters λ (intensity), μ_J (mean jump), and σ_J (volatility).
+   - **Exogenous Factors:** Incorporates inflation and money velocity trends.
+   - **Hybrid CIR/Hull-White Model:** Combines non-negative rate properties with mean-reversion and calibrated time-dependent drift.
 
-### 2. **Bond Analytics**
-   - **Bond Pricing**: Computes bond prices based on yield, maturity, face value, and coupon rate.
-   - **Total Return Analysis**: Calculates the total return and annualized return if the bond is held to maturity.
-   - **Duration & Convexity**: Measures the bond's sensitivity to interest rate changes using **Macaulay Duration**, **Modified Duration**, and **Convexity**.
-   - **Binomial Tree Pricing**: Prices bonds using a binomial tree model, with support for **callable** and **putable** bonds.
+2. **Bond Analytics & Pricing**
+   - **Bond Pricing:** Calculates prices from yield, maturity, face value, and coupon rate.
+   - **Total Return Analysis:** Determines gross and annualized returns if held to maturity.
+   - **Duration & Convexity:** Measures sensitivity and curvature of bond price-yield relationships.
+   - **Binomial Tree Pricing:** Supports valuation of bonds with embedded options.
+   - **Credit–FX Simulation:** Computes risk–neutral prices for EUR and USD bonds and estimates FX delta via finite differences.
 
-### 3. **Visualization & Reporting**
-   - **Interactive Plots**: Visualizes historical and projected interest rates, bond prices, and risk metrics using **Matplotlib** and **Seaborn**.
-   - **Heatmaps**: Displays bond prices at different nodes and time steps in a binomial tree model.
-   - **Summary Tables**: Provides detailed analytics for bond pricing, returns, duration, and convexity.
+3. **Visualization & Reporting**
+   - **Interactive Plots & Heatmaps:** Visualize interest rate projections, bond prices, and risk metrics.
+   - **Summary Tables:** Present detailed analytics for bond pricing, returns, duration, and convexity.
 
 ---
 
 ## 🧩 Project Structure
 
-### 1. **Interest Rate Tool**
-   - **Combines Jump Diffusion, Exogenous Factors, and Refined CIR/Hull-White Models**:
-     - **Jump Diffusion**: Models sudden changes in interest rates using calibrated parameters (λ, μ_J, σ_J).
-     - **Exogenous Factors**: Incorporates inflation and money velocity trends to refine the interest rate projections.
-     - **CIR + Hull-White Hybrid**: Ensures non-negative rates and captures mean-reversion and time-dependent drift.
-   - **Output**: Projected interest rates with confidence intervals, visualized alongside historical data.
+- **Interest Rate Tool:**  
+  Integrates jump diffusion, exogenous factors, and the hybrid CIR/Hull-White model to project future interest rates with confidence intervals.
 
-### 2. **Bond Pricing Tool**
-   - **Bond Price Calculation**: Computes bond prices using yield, maturity, face value, and coupon rate.
-   - **Total Return Analysis**: Calculates gross and annualized returns for bonds held to maturity.
-   - **Duration & Convexity**: Measures interest rate sensitivity and curvature of the bond price-yield relationship.
-   - **Binomial Tree Pricing**: Prices bonds with optional embedded call or put features using a binomial tree model.
+- **Bond Pricing Tool:**  
+  Computes bond prices, analyzes total returns, and evaluates risk measures (duration and convexity) using both analytical and binomial tree methods.
+
+- **Credit–FX Jump Model Simulation:**  
+  Simulates risk–neutral pricing of zero–coupon bonds under default risk and FX jump conditions. It provides:
+  - **Theoretical Pricing:**  
+    - USD Bond: `P_USD = exp(-r*T) * exp(-h*T)`
+    - EUR Bond (in USD):  
+      `P_EUR = exp(-r*T) * S0 * [exp(-h*T) + exp(J) * (1 - exp(-h*T))]`
+  - **Monte Carlo Pricing:** For robust simulation of bond payoffs.
+  - **FX Sensitivity (Delta):** Estimated using finite difference approximations.
 
 ---
 
 ## 🚀 Usage
 
-### 1. **Data Preparation**
-   - Ensure the following CSV files are available:
-     - `Yield Curve.csv`: Historical yield curve data.
-     - `M2V.csv`: Money velocity data.
-     - `US Inflation.csv`: Inflation data.
+1. **Data Preparation:**  
+   Ensure CSV files such as `Yield Curve.csv`, `M2V.csv`, and `US Inflation.csv` are available for historical data.
 
-### 2. **Running the Notebook**
-   - Execute the Jupyter notebook cells to:
-     - Calibrate jump parameters and interest rate models.
-     - Compute bond prices, returns, duration, and convexity.
-     - Generate visualizations and summary tables.
+2. **Running the Application:**  
+   - **Jupyter Notebook:** Execute the cells to calibrate models, compute bond analytics, and generate visualizations.  
+   - **Flask App:** Launch the web interface for interactive exploration.
 
-### 3. **Analyzing Results**
-   - Review the output plots and tables to gain insights into:
-     - Projected interest rates and their sensitivity to exogenous factors.
-     - Bond pricing and risk metrics for selected maturities.
-
----
-
-## 📊 Example Outputs
-
-### 1. **Interest Rate Projections**
-   - A plot showing historical 10-year yields and projected yields using the modified Hull-White model.
-   - Confidence intervals for projected rates based on jump diffusion and exogenous factors.
-
-### 2. **Bond Analytics**
-   - **Bond Price**: Computed price for selected maturities (e.g., 2-year and 10-year bonds).
-   - **Total Return**: Gross and annualized returns if held to maturity.
-   - **Duration & Convexity**: Measures of interest rate sensitivity.
-   - **Binomial Tree Heatmap**: Visual representation of bond prices at different nodes and time steps.
+3. **Analyzing Results:**  
+   Review output plots and summary tables to gain insights into:
+   - Projected interest rates and their drivers.
+   - Bond pricing, returns, duration, and convexity.
+   - The impact of default risk and FX jumps on bond valuations.
 
 ---
 
 ## 📦 Dependencies
 
 - **Python 3.x**
-- **Libraries**:
-  - `numpy`, `pandas`, `matplotlib`, `seaborn`, `statsmodels`, `numpy_financial`
+- **Libraries:** `numpy`, `pandas`, `matplotlib`, `seaborn`, `statsmodels`, `numpy_financial`, **Flask**
 
 ---
 
 ## 🔮 Future Work
 
-- **Model Extensions**: Incorporate additional factors like macroeconomic indicators or credit risk.
-- **Real-Time Data Integration**: Fetch real-time yield curve data for up-to-date analysis.
-- **User Interface**: Develop a web-based interface for interactive analysis using **Flask** or **Dash**.
+- **Model Extensions:** Incorporate additional macroeconomic indicators and credit risk factors.
+- **Real-Time Integration:** Fetch live yield curve and market data.
+- **Enhanced UI:** Expand the web interface with frameworks like Flask or Dash for deeper interactivity.
 
 ---
 
 ## 📝 Conclusion
 
-This project provides a **robust framework** for **interest rate modeling** and **bond pricing**, combining **theoretical models** with **practical data analysis**. By integrating **jump diffusion**, **exogenous factors**, and **refinements to traditional models**, it offers a more **accurate and realistic approach** to financial analytics. Whether you're a risk analyst, portfolio manager, or financial researcher, this toolkit equips you with the tools to make informed decisions in a dynamic market environment.
+This project delivers a robust framework for **interest rate modeling** and **bond pricing**, blending theoretical models with practical data analysis. Whether for risk management, portfolio optimization, or academic research, this toolkit provides the advanced tools necessary for navigating today’s dynamic financial markets.
 
---- 
+---
 
 🌟 **Happy Modeling!** 🌟
+
